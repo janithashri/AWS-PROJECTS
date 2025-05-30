@@ -66,4 +66,4 @@ Secured an API with intelligent rate limiting using **AWS WAF**. Defined rules t
 
 ### 📮 Let’s Connect  
 Open to discussions, feedback, or collabs!  
-📧 [Your Email] | 🌐 [Portfolio/LinkedIn if applicable]
+📧 janithashri@gmail.com
