@@ -38,8 +38,8 @@ You can deploy this project using:
 
 Here’s proof it works! 👇
 
-- **Lambda Function Execution Success:**  
-  ![Lambda Test Success](docs/images/lambda-test.png)  
+- **UI:**  
+  ![Basic UI](/Users/janiice/Desktop/Screenshot\2025-05-30\at\12.05.12 PM.png)  
 
 - **API Gateway Response:**  
   ![API Gateway Test Success](docs/images/api-gateway-test.png)  
