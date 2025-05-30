@@ -52,4 +52,4 @@ Here’s proof it works! 👇
 
 1. Clone this repo:  
    ```bash
-   git clone https://github.com/
+   https://github.com/janithashri/AWS-PROJECTS.git
