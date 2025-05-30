@@ -39,7 +39,7 @@ You can deploy this project using:
 Here’s proof it works! 👇
 
 - **UI:**  
-  ![Basic UI](/Users/janiice/Desktop/Screenshot\2025-05-30\at\12.05.12 PM.png)  
+  ![Basic UI](/Users/janiice/Desktop/Screenshot\2025-05-30\at\12.05.12PM.png)  
 
 - **API Gateway Response:**  
   ![API Gateway Test Success](docs/images/api-gateway-test.png)  
