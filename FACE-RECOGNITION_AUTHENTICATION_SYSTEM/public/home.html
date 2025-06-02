@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Face Authentication System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .upload-form {
+            margin: 20px 0;
+        }
+        .file-input {
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        #loading {
+            display: none;
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Face Authentication System</h1>
+        
+        <div class="upload-form">
+            <form id="authForm" enctype="multipart/form-data">
+                <div class="file-input">
+                    <label for="facetosearchupload">Select your face image:</label><br>
+                    <input type="file" name="facetosearch" id="facetosearchupload" accept="image/*" required>
+                </div>
+                <button type="submit" class="submit-btn">Authenticate</button>
+            </form>
+        </div>
+        
+        <div id="loading">
+            <p>Processing authentication...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('authForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading spinner
+            document.getElementById('loading').style.display = 'block';
+            
+            const formData = new FormData(this);
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                // Store the result in sessionStorage
+                sessionStorage.setItem('authResult', JSON.stringify(result));
+                
+                // Redirect to result page
+                window.location.href = '/result';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during authentication. Please try again.');
+                document.getElementById('loading').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
