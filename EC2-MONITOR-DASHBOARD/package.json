@@ -1,0 +1,35 @@
+{
+  "name": "ec2-monitor-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/janithashri/AWS-PROJECTS#readme",
+  "bugs": {
+    "url": "https://github.com/janithashri/AWS-PROJECTS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janithashri/AWS-PROJECTS.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "zip -r function.zip . -x \"*.git*\" -x \"node_modules/.bin/*\""
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "ec2",
+    "cloudwatch",
+    "metrics"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch": "^3.525.0",
+    "@aws-sdk/client-ec2": "^3.525.0",
+    "@aws-sdk/client-sns": "^3.525.0",
+    "@aws-sdk/client-ssm": "^3.525.0",
+    "aws-sdk": "^2.1692.0"
+  }
+}
