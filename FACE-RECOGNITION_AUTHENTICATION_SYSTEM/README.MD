@@ -45,4 +45,4 @@ A serverless face-based employee authentication system using AWS Rekognition, S3
 7. **Frontend Setup**  
    Simple page to upload/capture images, call API, and display authentication results.
 
-
+---
