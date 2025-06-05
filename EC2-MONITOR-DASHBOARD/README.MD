@@ -1,6 +1,9 @@
 # 🚀 EC2 Monitoring System – Serverless Project
 
-A serverless EC2 monitoring system using AWS Lambda, CloudWatch, DynamoDB, API Gateway, and SNS. It automates instance monitoring, stores historical metrics, and displays them on a web dashboard.
+A fully automated EC2 monitoring system using AWS Lambda, CloudWatch, DynamoDB, API Gateway, and SNS.  
+It simplifies and automates the process of setting up alarms, tracking both **default and custom metrics**, and visualizing them in a dashboard — even for users with **no technical background**.
+
+Ideal for EC2 owners who want quick insights into their instance performance, without needing to configure AWS services manually.
 
 ---
 
@@ -46,3 +49,7 @@ A serverless EC2 monitoring system using AWS Lambda, CloudWatch, DynamoDB, API G
 - Automated metric collection and alerting
 - Email notifications on threshold breaches
 - Real-time and historical data dashboard
+
+
+
+
