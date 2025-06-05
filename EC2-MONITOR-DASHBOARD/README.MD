@@ -35,6 +35,7 @@ A serverless EC2 monitoring system using AWS Lambda, CloudWatch, DynamoDB, API G
 [Frontend (2 Buttons)]
 
 ├── /create-monitoring → Lambda (IAM + Metrics + Alarm + SNS) 
+
 ├── /fetch-and-display → Lambda (CloudWatch + DynamoDB + JSON)
 
 ---
