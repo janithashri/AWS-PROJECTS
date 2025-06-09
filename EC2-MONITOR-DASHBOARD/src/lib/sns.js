@@ -2,9 +2,7 @@ import { SNSClient, CreateTopicCommand, SubscribeCommand } from "@aws-sdk/client
 
 const snsClient = new SNSClient();
 
-/**
- * Create an SNS topic for CloudWatch alarms
- */
+
 export async function createSNSTopic(topicName) {
   const command = new CreateTopicCommand({
     Name: topicName
@@ -18,9 +16,7 @@ export async function createSNSTopic(topicName) {
   }
 }
 
-/**
- * Subscribe an email address to an SNS topic
- */
+
 export async function subscribeEmail(topicArn, email) {
   const command = new SubscribeCommand({
     TopicArn: topicArn,
