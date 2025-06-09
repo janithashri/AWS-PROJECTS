@@ -2,9 +2,7 @@ import { SSMClient, SendCommandCommand } from "@aws-sdk/client-ssm";
 
 const ssmClient = new SSMClient();
 
-/**
- * Install CloudWatch agent on the EC2 instance
- */
+
 export async function installCloudWatchAgent(instanceId) {
   const command = new SendCommandCommand({
     DocumentName: 'AWS-ConfigureAWSPackage',
@@ -22,11 +20,9 @@ export async function installCloudWatchAgent(instanceId) {
   }
 }
 
-/**
- * Configure metrics collection on the EC2 instance
- */
+
 export async function configureMetricsCollection(instanceId) {
-  // CloudWatch agent configuration JSON
+  
   const agentConfig = {
     metrics: {
       append_dimensions: {
@@ -58,10 +54,10 @@ export async function configureMetricsCollection(instanceId) {
     }
   };
   
-  // Convert the configuration to a string
+
   const configString = JSON.stringify(agentConfig);
   
-  // Create SSM parameter for the CloudWatch agent configuration
+
   const createParamCommand = new SendCommandCommand({
     DocumentName: 'AWS-RunShellScript',
     InstanceIds: [instanceId],
