@@ -16,7 +16,7 @@
 
 <h2>🔗 Serverless URL Shortener</h2>
 <p>A lightweight URL shortener built completely serverless using <strong>AWS Lambda</strong>, <strong>API Gateway</strong>, and <strong>DynamoDB</strong>. I focused on minimal latency, clean redirects, and structured storage.</p>
-👉 <a href="https://github.com/janithashri/AWS-PROJECTS/URL_SHORTENER_USING_LAMBDA">View Project</a>
+👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/EC2-MONITOR-DASHBOARD">View Project</a>
 
 ---
 
@@ -28,7 +28,7 @@
 
 <h2>📊 Logging, Monitoring & Alerts</h2>
 <p>Used <strong>CloudWatch Logs</strong>, <strong>Alarms</strong>, and <strong>SNS</strong> to monitor app behavior, track failures, and push alerts to email. Added structured logging and custom metrics for better visibility.</p>
-👉 <a href="https://github.com/janithashri/AWS-PROJECTS/EC2-MONITOR-DASHBOARD">View Project</a>
+👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/EC2-MONITOR-DASHBOARD">View Project</a>
 
 ---
 
