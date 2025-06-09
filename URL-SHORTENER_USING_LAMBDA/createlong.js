@@ -4,6 +4,12 @@ import { unmarshall } from "@aws-sdk/util-dynamodb";
 const client = new DynamoDBClient({ region: "us-east-1" });
 
 export const handler = async (event) => {
+  const headers= {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Content-Type": "application/json"
+  };
   console.log("Input to lambda function", event);
 
   const shortURL = event.pathParameters?.shortURL || 
