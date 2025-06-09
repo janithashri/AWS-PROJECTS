@@ -33,21 +33,17 @@ export const handler = async (event) => {
     await installCloudWatchAgent(instanceId);
     console.log(`CloudWatch agent installed on instance ${instanceId}`);
     
-    // Step 3: Configure metrics collection (memory, disk, swap)
     await configureMetricsCollection(instanceId);
     console.log(`Metrics collection configured on instance ${instanceId}`);
-    
-    // Step 4: Create SNS topic for alarms
+   
     const topicArn = await createSNSTopic(`EC2-Metrics-Alarm-${instanceId}`);
     console.log(`SNS topic created: ${topicArn}`);
     
-    // Step 5: Subscribe email to the SNS topic
     if (email) {
       await subscribeEmail(topicArn, email);
       console.log(`Email ${email} subscribed to SNS topic`);
     }
     
-    // Step 6: Create CloudWatch alarms based on thresholds
     await createCloudWatchAlarms(instanceId, thresholds, topicArn);
     console.log(`CloudWatch alarms created for instance ${instanceId}`);
     
