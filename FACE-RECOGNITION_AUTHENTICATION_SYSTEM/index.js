@@ -6,33 +6,28 @@ const fs = require('fs');
 
 const app = express();
 
-// Configure AWS SDK
+
 AWS.config.update({
   region: 'us-east-1'  // Change to your region
 });
 
-// Initialize AWS services
 const rekognition = new AWS.Rekognition();
 const s3 = new AWS.S3();
 
-// Configure middleware
 app.use(fileUpload({
   createParentPath: true
 }));
 app.use(express.static('public'));
 app.use(express.json());
 
-// Create uploads directory if it doesn't exist
 if (!fs.existsSync('./uploads')) {
   fs.mkdirSync('./uploads');
 }
 
-// Root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
 
-// Authentication result route
 app.get('/result', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'result.html'));
 });
@@ -58,7 +53,7 @@ app.post('/upload', async function(req, res) {
     const imageBuffer = fs.readFileSync(uploadPath);
     
     const params = {
-      CollectionId: "faceauthemp", 
+      CollectionId: "your_collection_id", 
       Image: {
         Bytes: imageBuffer
       },
@@ -77,7 +72,7 @@ app.post('/upload', async function(req, res) {
       
       try {
         const s3Params = {
-          Bucket: "faceauth-jani", 
+          Bucket: "your_bucket_name", 
           Key: externalImageId + ".jpg"  
         };
         
