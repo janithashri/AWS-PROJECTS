@@ -16,13 +16,13 @@
 
 <h2>🔗 Serverless URL Shortener</h2>
 <p>A lightweight URL shortener built completely serverless using <strong>AWS Lambda</strong>, <strong>API Gateway</strong>, and <strong>DynamoDB</strong>. I focused on minimal latency, clean redirects, and structured storage.</p>
-👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/EC2-MONITOR-DASHBOARD">View Project</a>
+👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/URL-SHORTENER_USING_LAMBDA">View Project</a>
 
 ---
 
 <h2>🖼️ Rekognition - Face Recognition system and S3 Image Upload with Node.js</h2>
 <p>Built a secure, fast image upload backend using pre-signed URLs and the AWS SDK. Integrated proper MIME filtering and size limits for production readiness.</p>
-👉 <a href="https://github.com/janithashri/AWS-PROJECTS/FACE-RECOGNITION_AUTHENTICATION_SYSTEM">View Project</a>
+👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/URL-SHORTENER_USING_LAMBDA">View Project</a>
 
 ---
 
