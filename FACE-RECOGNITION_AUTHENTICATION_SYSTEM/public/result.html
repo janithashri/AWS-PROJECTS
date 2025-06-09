@@ -78,16 +78,14 @@
 </head>
 <body>
     <div class="container" id="resultContainer">
-        <!-- Content will be dynamically inserted here -->
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the authentication result from sessionStorage
             const resultJson = sessionStorage.getItem('authResult');
             
             if (!resultJson) {
-                window.location.href = '/'; // Redirect to home if no result
+                window.location.href = '/'; 
                 return;
             }
             
@@ -95,7 +93,6 @@
             const container = document.getElementById('resultContainer');
             
             if (result.success) {
-                // Success case
                 container.innerHTML = `
                     <h1>Authentication Result</h1>
                     <div class="success-container">
@@ -124,7 +121,6 @@
                     <button class="back-btn" onclick="window.location.href='/'">Back to Home</button>
                 `;
             } else {
-                // Failure case
                 container.innerHTML = `
                     <h1>Authentication Result</h1>
                     <div class="failure-container">
