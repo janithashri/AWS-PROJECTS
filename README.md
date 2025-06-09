@@ -27,7 +27,7 @@
 ---
 
 <h2>📊 Logging, Monitoring & Alerts</h2>
-<p>Used <strong>CloudWatch Logs</strong>, <strong>Alarms</strong>, and <strong>SNS</strong> to monitor app behavior, track failures, and push alerts to email. Added structured logging and custom metrics for better visibility.</p>
+<p>Serveless Node.js app used to automate Creation of IAM ROLE , Set <strong>CloudWatch custom metrics and  Use Logs</strong>, <strong>Alarms</strong>, and <strong>SNS</strong> to monitor app behavior, track failures, and push alerts to email. Added structured logging and custom metrics for better visibility.</p>
 👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/EC2-MONITOR-DASHBOARD">View Project</a>
 
 ---
