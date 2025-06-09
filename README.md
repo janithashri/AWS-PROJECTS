@@ -22,7 +22,7 @@
 
 <h2>🖼️ Rekognition - Face Recognition system and S3 Image Upload with Node.js</h2>
 <p>Built a secure, fast image upload backend using pre-signed URLs and the AWS SDK. Integrated proper MIME filtering and size limits for production readiness.</p>
-👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/URL-SHORTENER_USING_LAMBDA">View Project</a>
+👉 <a href="https://github.com/janithashri/AWS-PROJECTS/tree/main/FACE-RECOGNITION_AUTHENTICATION_SYSTEM">View Project</a>
 
 ---
 
@@ -36,25 +36,21 @@
 
 <h2>🌐 Node.js REST API Deployed to AWS</h2>
 <p>Packaged and deployed a RESTful Node.js API on <strong>EC2</strong> (and tested with Elastic Beanstalk too). Configured IAM roles, handled environment secrets, and set up NGINX for reverse proxying.</p>
-👉 <a href="https://github.com/your-username/node-api-deploy-aws">View Project</a>
 
 ---
 
 <h2>🧱 Node Microservices with AWS CDK</h2>
 <p>Experimented with microservice architecture using <strong>AWS CDK</strong>. Defined infrastructure as code for deploying Node.js containers to <strong>ECS Fargate</strong>, with load balancing and autoscaling rules.</p>
-👉 <a href="https://github.com/your-username/aws-cdk-node-microservices">View Project</a>
 
 ---
 
 <h2>🤖 CI/CD with GitHub Actions</h2>
 <p>Created an automated deployment pipeline where code pushes trigger build/test/deploy jobs directly to AWS using <strong>GitHub Actions</strong>. This helped streamline and standardize the deployment flow.</p>
-👉 <a href="https://github.com/your-username/github-actions-node-deploy">View Project</a>
 
 ---
 
 <h2>🛡️ API Rate Limiting with AWS WAF</h2>
 <p>Secured an API with intelligent rate limiting using <strong>AWS WAF</strong>. Defined rules to block malicious IPs, throttle excessive calls, and prevent abuse in real time.</p>
-👉 <a href="https://github.com/your-username/aws-waf-rate-limiting">View Project</a>
 
 ---
 
