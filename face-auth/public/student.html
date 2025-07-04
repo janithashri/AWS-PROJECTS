@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Attendance</title>
+  <style>
+    body { font-family: Arial; background-color: #fdfdfd; padding: 30px; }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    table { width: 100%; margin-top: 20px; }
+    th, td { padding: 10px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Attendance - <span id="studentId"></span></h2>
+    <table id="attendanceTable">
+      <thead>
+        <tr><th>Date</th><th>Status</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const result = JSON.parse(sessionStorage.getItem('authResult') || '{}');
+    const studentId = result.externalImageId;
+    document.getElementById('studentId').innerText = studentId;
+
+    fetch(`/attendance?studentId=${studentId}`)
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('#attendanceTable tbody');
+        data.attendance.forEach(entry => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${entry.date}</td><td>${entry.status}</td>`;
+          tbody.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>

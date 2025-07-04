@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Face Recognition Attendance Login</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="file"] {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Face Recognition Attendance</h1>
+    <form id="authForm" enctype="multipart/form-data">
+      <label>Select your face image:</label><br>
+      <input type="file" name="facetosearch" id="facetosearchupload" accept="image/*" required><br>
+      <button type="submit">Authenticate</button>
+    </form>
+
+    <div id="loading">
+      <p>Authenticating...</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('authForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      document.getElementById('loading').style.display = 'block';
+
+      const formData = new FormData(this);
+
+      try {
+        const response = await fetch('/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+        sessionStorage.setItem('authResult', JSON.stringify(result));
+        
+        if (result.success) {
+          if (result.externalImageId.startsWith('teacher_')) {
+            window.location.href = '/teacher.html';
+          } else {
+            window.location.href = '/student.html';
+          }
+        } else {
+          alert('Authentication failed');
+          window.location.href = '/';
+        }
+      } catch (error) {
+        alert('Error occurred');
+      } finally {
+        document.getElementById('loading').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

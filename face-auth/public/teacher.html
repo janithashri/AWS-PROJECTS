@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teacher Dashboard</title>
+  <style>
+    body { font-family: Arial; padding: 40px; background-color: #eef; }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px #ccc;
+    }
+    table { width: 100%; margin-top: 20px; }
+    th, td { padding: 10px; text-align: left; }
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Teacher Attendance Panel - <span id="today"></span></h2>
+    <p>Mark students as present:</p>
+    <table id="studentTable">
+      <thead>
+        <tr><th>Name</th><th>Action</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const students = ['student_101', 'student_102', 'student_103'];
+
+    document.getElementById('today').innerText = new Date().toLocaleDateString();
+
+    const tbody = document.querySelector('#studentTable tbody');
+    students.forEach(id => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${id}</td><td><button onclick="markPresent('${id}')">Present</button></td>`;
+      tbody.appendChild(row);
+    });
+
+    function markPresent(studentId) {
+      const today = new Date().toISOString().split('T')[0];
+      fetch('/mark-attendance', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId, date: today })
+      }).then(res => {
+        if (res.ok) alert(`Marked ${studentId} as present`);
+      });
+    }
+  </script>
+</body>
+</html>
